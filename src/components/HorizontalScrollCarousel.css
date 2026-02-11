@@ -1,0 +1,85 @@
+/* HorizontalScrollCarousel.css */
+.horizontal-scroll-section {
+    background-color: #171717;
+    /* neutral-900 */
+    position: relative;
+    height: 300vh;
+}
+
+.sticky-container {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.cards-container {
+    display: flex;
+    gap: 1rem;
+    /* gap-4 */
+    padding-left: 1rem;
+}
+
+.scroll-card {
+    position: relative;
+    height: 450px;
+    width: 450px;
+    overflow: hidden;
+    background-color: #e5e5e5;
+    /* neutral-200 */
+    border-radius: 1rem;
+}
+
+.card-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    transition: transform 0.3s ease;
+    background-size: cover;
+    background-position: center;
+}
+
+.scroll-card:hover .card-bg {
+    transform: scale(1.1);
+}
+
+.card-content {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: grid;
+    place-content: center;
+}
+
+.card-title {
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(12px);
+    padding: 2rem;
+    font-size: 3rem;
+    /* text-6xl */
+    font-weight: 900;
+    /* font-black */
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+}
+
+.scroll-header,
+.scroll-footer {
+    background-color: #262626;
+    /* neutral-800 */
+    height: 12rem;
+    /* h-48 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-label {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #737373;
+    /* neutral-500 */
+}

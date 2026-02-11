@@ -1,0 +1,162 @@
+/* SmoothScrollHero.css */
+.smooth-scroll-wrapper {
+    background-color: #030712;
+    /* zinc-950/deep blue */
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Nav */
+.ss-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 3rem;
+    color: white;
+    background: linear-gradient(to bottom, rgba(3, 7, 18, 0.8), transparent);
+    backdrop-filter: blur(4px);
+}
+
+.ss-nav-logo {
+    font-size: 1.875rem;
+    color: #3b82f6;
+    /* blue-500 */
+    filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
+}
+
+.ss-nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #e5e7eb;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ss-nav-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* Hero */
+.ss-hero {
+    position: relative;
+    width: 100%;
+}
+
+.ss-center-image {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+}
+
+.ss-parallax-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 25vh;
+    position: relative;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.ss-parallax-img {
+    position: relative;
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ss-gradient-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50vh;
+    background: linear-gradient(to bottom, transparent, #030712);
+}
+
+/* Schedule */
+.ss-schedule {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 64rem;
+    padding: 12rem 2rem;
+    color: white;
+    background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.1), transparent 70%);
+}
+
+.ss-schedule h1 {
+    margin-bottom: 5rem;
+    font-size: 3.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: -0.05em;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ss-schedule-item {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.ss-schedule-item:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom-color: transparent;
+    transform: scale(1.02);
+}
+
+.ss-item-title {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #f3f4f6;
+}
+
+.ss-item-date {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+}
+
+.ss-item-location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #3b82f6;
+    background: rgba(59, 130, 246, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+}

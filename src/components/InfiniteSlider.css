@@ -1,0 +1,15 @@
+/* InfiniteSlider.css */
+.infinite-slider-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    /* optional mask for fade effect */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.infinite-slider-track {
+    display: flex;
+    width: max-content;
+    /* gap is handled inline or via utility classes */
+}
