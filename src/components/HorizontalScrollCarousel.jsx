@@ -5,18 +5,8 @@ import "./HorizontalScrollCarousel.css";
 const HorizontalScrollCarousel = () => {
     return (
         <div className="bg-neutral-800">
-            <div className="scroll-header">
-                <span className="scroll-label">
-                    Scroll down to explore
-                </span>
-            </div>
             <ScrollSection />
-            <div className="scroll-footer">
-                <span className="scroll-label">
-                    Keep scrolling
-                </span>
-            </div>
-        </div>
+                    </div>
     );
 };
 

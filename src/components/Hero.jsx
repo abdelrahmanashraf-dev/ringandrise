@@ -16,17 +16,15 @@ const AuroraHero = () => {
       </div>
 
       <div className="aurora-content">
-        <span className="aurora-badge">New: AI Voice Analysis 2.0</span>
-        <h1 className="aurora-title">
-          Cold Calling<br />
-          Reimagined.
-        </h1>
+        {/* <span className="aurora-badge">New: AI Voice Analysis 2.0</span> */}
+        <h2 className="aurora-title">
+          The only cold calling company with a guaranteed results.
+        </h2>
         <p className="aurora-desc">
-          Scale your outreach by 10x with our predictive AI dialer.
-          Connect with more prospects, book more meetings, and close more deals.
+          We guarantee 40 qualified leads per month for each caller, or we work for free until you get them.
         </p>
         <button className="aurora-cta">
-          Start Free Trial <ArrowRight className="cta-icon" />
+          Start closing deals now <ArrowRight className="cta-icon" />
         </button>
       </div>
 

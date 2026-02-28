@@ -18,6 +18,7 @@ export function BrandLogos() {
             <h3 className="text-center text-neutral-500 text-sm uppercase tracking-wider mb-10">
                 Trusted by innovative teams worldwide
             </h3>
+
             <InfiniteSlider gap={60} duration={30}>
                 <LogoPlaceholder icon={<CloudLightning />} name="ThunderSoft" />
                 <LogoPlaceholder icon={<Globe />} name="GlobalTech" />

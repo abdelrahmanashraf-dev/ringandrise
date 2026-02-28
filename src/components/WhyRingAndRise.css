@@ -1,0 +1,144 @@
+.why-ring-section {
+  background-color: #ffffff;
+  color: #1a202c;
+  padding: 5rem 1rem;
+  font-family: var(--font-sans);
+}
+
+.why-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.why-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 3rem;
+}
+
+.why-scenario-section {
+  margin-bottom: 4rem;
+}
+
+.why-subtitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.why-desc {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.why-bad-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.why-bad-card {
+  background-color: #fffafb;
+  border-left: 4px solid #ef4444;
+  padding: 1.5rem 2rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.why-bad-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+}
+
+.why-bad-card p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.why-different-section {
+  margin-bottom: 4rem;
+}
+
+.why-blue-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #007aff;
+  margin-bottom: 1rem;
+}
+
+.center-desc {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+}
+
+.why-good-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.why-good-card {
+  background-color: #f4f8ff;
+  padding: 2.5rem 2rem;
+  border-radius: 0.75rem;
+}
+
+.why-icon-wrapper {
+  background-color: #007aff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.why-good-card h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+}
+
+.why-good-card p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.why-footer-section {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.why-footer-section h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.why-footer-section p {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .why-bad-cards,
+  .why-good-cards {
+    grid-template-columns: 1fr;
+  }
+}

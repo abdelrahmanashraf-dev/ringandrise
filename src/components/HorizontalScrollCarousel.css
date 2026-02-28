@@ -1,6 +1,6 @@
 /* HorizontalScrollCarousel.css */
 .horizontal-scroll-section {
-    background-color: #171717;
+    background-color: var(--bg-primary);
     /* neutral-900 */
     position: relative;
     height: 300vh;
@@ -68,7 +68,7 @@
 
 .scroll-header,
 .scroll-footer {
-    background-color: #262626;
+    background-color: #ac1d1d;
     /* neutral-800 */
     height: 12rem;
     /* h-48 */
@@ -80,6 +80,6 @@
 .scroll-label {
     font-weight: 600;
     text-transform: uppercase;
-    color: #737373;
+    color: #3f1515;
     /* neutral-500 */
 }

@@ -39,7 +39,7 @@ const Features = () => {
     <section id="features" className="section-padding">
       <div className="container">
         <div className="section-header">
-          <h2>Why Top Sales Teams Choose RingRise</h2>
+          <h2>Why Ring And Rise !</h2>
           <p>Everything you need to crush your quota.</p>
         </div>
 
