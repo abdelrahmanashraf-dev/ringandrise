@@ -10,21 +10,33 @@ import BrandLogos from './components/BrandLogos';
 import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import WhyRingAndRise from './components/WhyRingAndRise';
+import Services from './components/Services';
+import Stats from './components/Stats';
+import FAQ from './components/FAQ';
+import LeadJourney from './components/LeadJourney';
+import AboutUs from './components/AboutUs';
+
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Hero />
-      <div style={{ position: 'relative', zIndex: 10, background: 'var(--bg-primary)' }}>
-        {/* <Features /> */}
-        <WhyRingAndRise />
-        {/* <MouseImageTrail /> */}
-        {/* <BrandLogos /> */}
-        {/* <SmoothScrollHero /> */}
-        <HorizontalScrollCarousel />
-        <Testimonials />
-        <Footer />
-      </div>
+      <SmoothScrollHero>
+        <Navbar />
+        <Hero />
+        <div style={{ position: 'relative', zIndex: 10, background: 'transparent' }}>
+          <Services />
+          {/* <Features /> */}
+          <WhyRingAndRise />
+          {/* <MouseImageTrail /> */}
+          {/* <BrandLogos /> */}
+          {/* <HorizontalScrollCarousel /> */}
+          <LeadJourney />
+          {/* <Testimonials /> */}
+          <Stats />
+          <AboutUs />
+          <FAQ />
+          <Footer />
+        </div>
+      </SmoothScrollHero>
     </div>
   );
 }
