@@ -5,7 +5,7 @@ import './WhyRingAndRise.css';
 
 const WhyRingAndRise = () => {
     return (
-        <section className="why-ring-section">
+        <section id="why-us" className="why-ring-section">
             <div className="why-glow"></div>
 
             <div className="why-container">

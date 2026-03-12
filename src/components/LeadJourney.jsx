@@ -46,7 +46,7 @@ const journeySteps = [
 
 const LeadJourney = () => {
     return (
-        <section className="journey-section">
+        <section id="workflow" className="journey-section">
             <div className="journey-bg-glow"></div>
 
             <div className="journey-container">

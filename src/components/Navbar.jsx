@@ -2,23 +2,28 @@ import React from 'react';
 import { PhoneCall } from 'lucide-react';
 
 const Navbar = () => {
-    return (
-        <nav className="navbar">
-            <div className="container nav-content">
-                <div className="logo">
-                    <PhoneCall size={24} className="logo-icon" />
-                    <span className="logo-text">RingRise</span>
-                </div>
-                <div className="nav-links">
-                    <a href="#features">Features</a>
-                    <a href="#testimonials">Testimonials</a>
-                    <a href="#pricing">Pricing</a>
-                </div>
-                <div className="nav-cta">
-                    <button className="btn btn-primary">Get Started</button>
-                </div>
-            </div>
-            <style>{`
+  return (
+    <nav className="navbar">
+      <div className="container nav-content">
+        <div className="logo">
+          <PhoneCall size={24} className="logo-icon" />
+          <span className="logo-text">RingRise</span>
+        </div>
+        <div className="nav-links">
+          <a href="#services">Services</a>
+          <a href="#why-us">Why Us</a>
+          <a href="#samples">Samples</a>
+          <a href="#workflow">Workflow</a>
+          <a href="#screens">Clients</a>
+          <a href="#stats">Results</a>
+          <a href="#about">About</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <div className="nav-cta">
+          <button className="btn btn-primary">Get Started</button>
+        </div>
+      </div>
+      <style>{`
         .navbar {
           position: fixed;
           top: 0;
@@ -64,8 +69,8 @@ const Navbar = () => {
           }
         }
       `}</style>
-        </nav>
-    );
+    </nav>
+  );
 };
 
 export default Navbar;

@@ -1,0 +1,247 @@
+.calls-section {
+    padding: 120px 20px;
+    background-color: transparent;
+    color: white;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.calls-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.calls-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.calls-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    background: linear-gradient(90deg, #ffffff, #818cf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+}
+
+.calls-subtitle {
+    font-size: 1.25rem;
+    color: #9ca3af;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.calls-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.call-card {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 30px 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 380px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.call-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.05),
+            transparent);
+    transition: left 0.7s ease;
+    z-index: 1;
+}
+
+.call-card:hover::before {
+    left: 150%;
+}
+
+.call-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 20px 40px -15px rgba(79, 70, 229, 0.25);
+    background: rgba(30, 41, 59, 0.7);
+}
+
+.call-card.is-playing {
+    border-color: #6366f1;
+    background: rgba(30, 27, 75, 0.6);
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.3), inset 0 0 20px rgba(99, 102, 241, 0.1);
+    transform: scale(1.02);
+}
+
+.call-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4f46e5, #c084fc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+    z-index: 2;
+    box-shadow: 0 8px 16px -4px rgba(79, 70, 229, 0.4);
+}
+
+.call-info {
+    flex-grow: 1;
+    z-index: 2;
+}
+
+.call-name {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin: 0 0 6px 0;
+    color: #f8fafc;
+}
+
+.call-role {
+    font-size: 0.9rem;
+    color: #a1a1aa;
+    font-weight: 400;
+}
+
+.call-play-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    flex-shrink: 0;
+    z-index: 3;
+}
+
+.call-card:hover .call-play-btn {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.1);
+}
+
+.call-card.is-playing .call-play-btn {
+    background: #6366f1;
+    border-color: #818cf8;
+    color: white;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+    transform: scale(1.1);
+}
+
+/* Waveform Animation */
+.call-waveform {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    padding: 0 10%;
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 0;
+    margin-bottom: -1px;
+}
+
+.call-waveform span {
+    display: block;
+    width: 4%;
+    background: #c7d2fe;
+    border-radius: 8px 8px 0 0;
+    animation: callwave 1.2s ease-in-out infinite alternate;
+}
+
+.call-waveform span:nth-child(1) {
+    animation-delay: 0.0s;
+    height: 30%;
+}
+
+.call-waveform span:nth-child(2) {
+    animation-delay: 0.2s;
+    height: 60%;
+}
+
+.call-waveform span:nth-child(3) {
+    animation-delay: 0.4s;
+    height: 100%;
+}
+
+.call-waveform span:nth-child(4) {
+    animation-delay: 0.6s;
+    height: 40%;
+}
+
+.call-waveform span:nth-child(5) {
+    animation-delay: 0.8s;
+    height: 80%;
+}
+
+.call-waveform span:nth-child(6) {
+    animation-delay: 1.0s;
+    height: 50%;
+}
+
+.call-waveform span:nth-child(7) {
+    animation-delay: 0.5s;
+    height: 90%;
+}
+
+.call-waveform span:nth-child(8) {
+    animation-delay: 0.3s;
+    height: 70%;
+}
+
+@keyframes callwave {
+    0% {
+        transform: scaleY(0.3);
+    }
+
+    100% {
+        transform: scaleY(1.2);
+    }
+}
+
+@media (max-width: 768px) {
+    .calls-section {
+        padding: 80px 15px;
+    }
+
+    .calls-title {
+        font-size: 2.5rem;
+    }
+
+    .call-card {
+        max-width: 100%;
+    }
+}
