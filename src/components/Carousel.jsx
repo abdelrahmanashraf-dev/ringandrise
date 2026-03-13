@@ -59,10 +59,12 @@ function Carousel({ children, baseVelocity = 100 }) {
           text-transform: uppercase;
           font-size: 64px;
           display: flex;
-          white-space: nowrap;
-          display: flex;
           flex-wrap: nowrap;
-          color: rgba(255, 255, 255, 0.1);
+        }
+        .scroller .carousel-track {
+          display: flex;
+          white-space: nowrap;
+          color: var(--alpha-10);
         }
         .scroller span {
           display: block;

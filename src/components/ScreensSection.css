@@ -36,7 +36,7 @@
     font-weight: 800;
     margin-bottom: 1.5rem;
     letter-spacing: -1px;
-    color: #f8fafc;
+    color: var(--text-primary);
 }
 
 .screens-title span {
@@ -71,8 +71,8 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--alpha-5);
+    border: 1px solid var(--alpha-10);
     color: var(--text-primary);
     cursor: pointer;
     transition: all 0.3s ease;
@@ -99,8 +99,8 @@
 }
 
 .screen-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--alpha-8);
     border-radius: 20px;
     padding: 0.75rem;
     backdrop-filter: blur(10px);
@@ -118,8 +118,8 @@
 } */
 
 .screen-card:hover {
-    border-color: rgba(59, 130, 246, 0.3);
-    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent-secondary);
+    background: var(--blue-alpha-5);
 }
 
 .screen-card.hero-focus:hover {

@@ -43,7 +43,7 @@ const ScreensSection = () => {
                     transition={{ duration: 0.5 }}
                     className="screens-header"
                 >
-                    <h2 className="screens-title">Loved by <span>SDRs and AEs</span></h2>
+                    <h2 className="screens-title">Trusted by <span>Real Estate Investors</span></h2>
                     <p className="screens-desc">Real results from real teams using our proven platform.</p>
                 </motion.div>
 

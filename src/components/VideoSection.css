@@ -36,7 +36,7 @@
     font-weight: 800;
     margin-bottom: 1.5rem;
     letter-spacing: -1px;
-    color: #f8fafc;
+    color: var(--text-primary);
 }
 
 .video-title span {
@@ -48,15 +48,15 @@
 
 .video-desc {
     font-size: 1.25rem;
-    color: #a1a1aa;
+    color: var(--text-muted);
     line-height: 1.6;
     max-width: 700px;
     margin: 0 auto;
 }
 
 .video-player-wrapper {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--alpha-3);
+    border: 1px solid var(--alpha-8);
     border-radius: 20px;
     padding: 1rem;
     backdrop-filter: blur(10px);
@@ -68,8 +68,8 @@
 }
 
 .video-player-wrapper:hover {
-    border-color: rgba(59, 130, 246, 0.3);
-    box-shadow: 0 20px 50px -10px rgba(59, 130, 246, 0.15);
+    border-color: var(--accent-secondary);
+    box-shadow: 0 20px 50px -10px var(--blue-alpha-20);
 }
 
 .main-video {

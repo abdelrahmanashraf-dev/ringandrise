@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { PopupModal } from "react-calendly";
 import { motion } from "framer-motion";
 import "./Hero.css";
 import Carousel from "./Carousel";
 
 const AuroraHero = () => {
+  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+
   return (
     <section className="aurora-hero-section">
       <div className="aurora-canvas-container">
@@ -23,7 +26,7 @@ const AuroraHero = () => {
         <p className="aurora-desc">
           We guarantee 40 qualified leads per month for each caller, or we work for free until you get them.
         </p>
-        <button className="aurora-cta">
+        <button className="aurora-cta" onClick={() => setIsCalendlyOpen(true)}>
           Start closing deals now <ArrowRight className="cta-icon" />
         </button>
       </div>
@@ -33,6 +36,20 @@ const AuroraHero = () => {
         <Carousel baseVelocity={-2}>RingRise • 10x Calls • AI Power •</Carousel>
         <Carousel baseVelocity={2}>More Leads • Better Conversations •</Carousel>
       </div>
+
+      <PopupModal
+        url="https://calendly.com/ringandrise-info/closemoredeals"
+        onModalClose={() => setIsCalendlyOpen(false)}
+        open={isCalendlyOpen}
+        rootElement={document.getElementById("root")}
+        pageSettings={{
+          backgroundColor: '0f172a',
+          hideEventTypeDetails: false,
+          hideLandingPageDetails: false,
+          primaryColor: '3b82f6',
+          textColor: 'ffffff'
+        }}
+      />
     </section>
   );
 };

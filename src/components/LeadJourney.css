@@ -36,7 +36,7 @@
     font-weight: 800;
     margin-bottom: 1.5rem;
     letter-spacing: -1px;
-    color: #f8fafc;
+    color: var(--text-primary);
 }
 
 .journey-title span {
@@ -96,8 +96,8 @@
 }
 
 .timeline-content {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--alpha-2);
+    border: 1px solid var(--alpha-5);
     border-radius: 24px;
     padding: 3rem;
     position: relative;
@@ -108,7 +108,7 @@
 .timeline-item:hover .timeline-content {
     transform: translateY(-5px);
     border-color: rgba(59, 130, 246, 0.3);
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--alpha-4);
     box-shadow: 0 20px 40px -20px rgba(59, 130, 246, 0.15);
 }
 
@@ -162,7 +162,7 @@
 .timeline-content-title {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #f8fafc;
+    color: var(--text-primary);
     margin-bottom: 1.5rem;
 }
 
@@ -172,7 +172,7 @@
 }
 
 .timeline-content-desc {
-    color: #94a3b8;
+    color: var(--text-muted);
     line-height: 1.8;
     font-size: 1.05rem;
 }

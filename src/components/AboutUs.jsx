@@ -70,7 +70,7 @@ const AboutUs = () => {
                             <div className="about-card-icon">
                                 <TrendingUp size={32} />
                             </div>
-                            <h3>New but Driven</h3>
+                            <h3>ROI Driven</h3>
                             <p>Built by acquisition professionals who know exactly what it takes to convert a cold call into a closed deal.</p>
                         </div>
 
