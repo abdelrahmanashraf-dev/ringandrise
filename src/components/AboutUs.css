@@ -169,14 +169,33 @@
 
 @media (max-width: 768px) {
     .about-section {
-        padding: 5rem 1.5rem;
+        padding: 5rem 1.25rem;
     }
 
     .about-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        letter-spacing: -0.5px;
     }
 
     .about-subtitle {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
+    }
+
+    .about-header {
+        margin-bottom: 3rem;
+    }
+
+    .about-paragraph {
+        font-size: 1rem;
+    }
+
+    .about-paragraph.primary {
+        font-size: 1.1rem;
     }
 }
+
+@media (max-width: 480px) {
+    .about-title {
+        font-size: 1.75rem;
+    }
+}

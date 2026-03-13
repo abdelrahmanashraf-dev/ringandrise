@@ -217,22 +217,37 @@
 
 @media (max-width: 768px) {
   .why-ring-section {
-    padding: 5rem 1.5rem;
+    padding: 5rem 1.25rem;
   }
 
   .why-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    letter-spacing: -0.5px;
   }
 
   .why-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
   }
 
   .why-blue-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+  }
+
+  .why-footer-section {
+    padding: 2.5rem 1.25rem;
   }
 
   .why-footer-section h3 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 }
+
+@media (max-width: 480px) {
+  .why-title {
+    font-size: 1.75rem;
+  }
+
+  .why-subtitle {
+    font-size: 1.2rem;
+  }
+}

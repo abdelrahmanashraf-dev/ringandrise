@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { PhoneCall, Sun, Moon } from 'lucide-react';
+import { PhoneCall, Sun, Moon, Menu, X } from 'lucide-react';
 import { PopupModal } from 'react-calendly';
 import logo from '../images/logo.png';
 
 const Navbar = () => {
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLightMode, setIsLightMode] = useState(() => {
     return localStorage.getItem('theme') === 'light';
   });
@@ -21,12 +22,13 @@ const Navbar = () => {
 
   const toggleTheme = () => setIsLightMode(prev => !prev);
 
+  const closeMenu = () => setIsMobileMenuOpen(false);
+
   return (
     <nav className="navbar">
       <div className="container nav-content">
         <div className="logo">
           <img src={logo} alt="RingRise Logo" className="logo-image" style={{ height: '32px', width: 'auto' }} />
-          <span className="logo-text">Ring & Rise</span>
         </div>
         <div className="nav-links">
           <a href="#services">Services</a>
@@ -42,8 +44,23 @@ const Navbar = () => {
           {/* <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle theme">
             {isLightMode ? <Moon size={20} /> : <Sun size={20} />}
           </button> */}
-          <button className="btn btn-primary" onClick={() => setIsCalendlyOpen(true)}>Get Started</button>
+          <button className="btn btn-primary get-started-btn" onClick={() => setIsCalendlyOpen(true)}>Get Started</button>
+          
+          <button className="mobile-menu-btn" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Toggle menu">
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
+      </div>
+
+      <div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
+        <a href="#services" onClick={closeMenu}>Services</a>
+        <a href="#why-us" onClick={closeMenu}>Why Us</a>
+        <a href="#samples" onClick={closeMenu}>Samples</a>
+        <a href="#workflow" onClick={closeMenu}>Workflow</a>
+        <a href="#screens" onClick={closeMenu}>Clients</a>
+        <a href="#stats" onClick={closeMenu}>Results</a>
+        <a href="#about" onClick={closeMenu}>About</a>
+        <a href="#faq" onClick={closeMenu}>FAQ</a>
       </div>
 
       <PopupModal
@@ -93,7 +110,46 @@ const Navbar = () => {
         .nav-links {
           display: none;
         }
-        @media (min-width: 768px) {
+        .mobile-menu-btn {
+          display: none;
+          background: none;
+          border: none;
+          color: var(--text-primary);
+          cursor: pointer;
+          padding: 0.5rem;
+          align-items: center;
+          justify-content: center;
+        }
+        .mobile-menu {
+          display: none;
+          position: fixed;
+          top: 80px;
+          left: 0;
+          width: 100%;
+          background: var(--nav-bg);
+          backdrop-filter: blur(10px);
+          border-bottom: 1px solid var(--nav-border);
+          flex-direction: column;
+          padding: 1rem 0;
+          z-index: 999;
+          gap: 0.5rem;
+        }
+        .mobile-menu.active {
+          display: flex;
+        }
+        .mobile-menu a {
+          color: var(--text-secondary);
+          text-decoration: none;
+          font-weight: 500;
+          padding: 0.75rem 2rem;
+          font-size: 1.1rem;
+          transition: color 0.2s, background 0.2s;
+        }
+        .mobile-menu a:hover {
+          color: var(--text-primary);
+          background: rgba(128, 128, 128, 0.05);
+        }
+        @media (min-width: 900px) {
           .nav-links {
             display: flex;
             gap: 2rem;
@@ -117,12 +173,19 @@ const Navbar = () => {
             background: rgba(128, 128, 128, 0.1);
           }
         }
-        @media (max-width: 767px) {
+        @media (max-width: 899px) {
           .theme-toggle {
             color: var(--text-primary);
             display: flex;
             align-items: center;
             justify-content: center;
+          }
+          .mobile-menu-btn {
+            display: flex;
+          }
+          .get-started-btn {
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
           }
         }
       `}</style>

@@ -137,42 +137,43 @@
 
 @media (max-width: 768px) {
     .screens-ring-section {
-        padding: 5rem 1.5rem;
+        padding: 4rem 1rem;
     }
 
     .screens-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .screens-desc {
-        font-size: 1.125rem;
+        font-size: 1rem;
     }
 
     .carousel-container {
-        flex-direction: column;
-    }
-
-    .carousel-track {
-        min-height: 300px;
-    }
-
-    .screen-card {
-        flex: 0 0 280px;
-        margin: 1rem 0;
+        gap: 0.5rem;
     }
 
     .carousel-arrow {
-        transform: rotate(90deg);
-        /* points arrows up/down for vertical stacing if needed, or hide */
+        width: 36px;
+        height: 36px;
+        flex-shrink: 0;
     }
 
-    .left-arrow {
-        order: -1;
-        transform: rotate(90deg);
-    }
-
-    .right-arrow {
-        order: 1;
-        transform: rotate(90deg);
+    .screen-card {
+        flex: 0 0 240px;
     }
 }
+
+@media (max-width: 480px) {
+    .screens-title {
+        font-size: 1.75rem;
+    }
+
+    .carousel-arrow {
+        width: 30px;
+        height: 30px;
+    }
+
+    .screen-card {
+        flex: 0 0 200px;
+    }
+}

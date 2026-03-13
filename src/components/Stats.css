@@ -113,3 +113,31 @@
 .stat-number-wrapper {
     display: inline-block;
 }
+
+@media (max-width: 768px) {
+    .stats-section {
+        padding: 60px 15px;
+    }
+
+    .stats-title {
+        font-size: 2.5rem;
+    }
+
+    .stat-value {
+        font-size: 3.5rem;
+    }
+
+    .stat-card {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-title {
+        font-size: 2rem;
+    }
+
+    .stat-value {
+        font-size: 3rem;
+    }
+}

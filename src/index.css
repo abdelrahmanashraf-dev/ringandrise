@@ -172,6 +172,30 @@ img {
   padding: var(--spacing-xl) 0;
 }
 
+/* ===========================
+   Global Mobile Responsive
+   =========================== */
+@media (max-width: 899px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .btn {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .section-padding {
+    padding: 5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
 /* Calendly Navy Blue Mode */
 html:not(.light-mode) .calendly-overlay .calendly-popup-content {
   filter: invert(2) sepia(3) saturate(8) hue-rotate(180deg) brightness(1) contrast(1);

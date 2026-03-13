@@ -120,6 +120,22 @@ const Footer = () => {
           color: white;
           transform: translateY(-3px);
         }
+        @media (max-width: 768px) {
+          .footer-content {
+            grid-template-columns: 1fr 1fr;
+          }
+          .brand-col {
+            grid-column: 1 / -1;
+          }
+        }
+        @media (max-width: 480px) {
+          .footer-content {
+            grid-template-columns: 1fr;
+          }
+          .brand-col {
+            grid-column: auto;
+          }
+        }
       `}</style>
     </footer>
   );

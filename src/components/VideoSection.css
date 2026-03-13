@@ -84,14 +84,28 @@
 
 @media (max-width: 768px) {
     .video-ring-section {
-        padding: 5rem 1.5rem;
+        padding: 4rem 1.25rem;
+    }
+
+    .video-header {
+        margin-bottom: 2.5rem;
     }
 
     .video-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .video-desc {
-        font-size: 1.125rem;
+        font-size: 1rem;
+    }
+
+    .main-video {
+        max-height: 40vh;
     }
 }
+
+@media (max-width: 480px) {
+    .video-title {
+        font-size: 1.75rem;
+    }
+}

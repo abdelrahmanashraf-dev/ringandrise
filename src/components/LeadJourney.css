@@ -235,10 +235,40 @@
 
 @media (max-width: 768px) {
     .journey-section {
-        padding: 4rem 1.5rem;
+        padding: 4rem 1.25rem;
+    }
+
+    .journey-timeline {
+        padding-left: 2.5rem;
     }
 
     .journey-header {
-        margin-bottom: 4rem;
+        margin-bottom: 3rem;
+    }
+
+    .journey-title {
+        font-size: 2rem;
+    }
+
+    .journey-title span {
+        font-size: 1.75rem;
+    }
+
+    .journey-subtitle {
+        font-size: 1rem;
+    }
+
+    .timeline-content {
+        padding: 1.5rem;
+    }
+
+    .timeline-icon-container {
+        left: -2.5rem !important;
     }
 }
+
+@media (max-width: 480px) {
+    .journey-title {
+        font-size: 1.75rem;
+    }
+}

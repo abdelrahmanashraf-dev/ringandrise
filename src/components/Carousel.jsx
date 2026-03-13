@@ -70,6 +70,16 @@ function Carousel({ children, baseVelocity = 100 }) {
           display: block;
           margin-right: 30px;
         }
+        @media (max-width: 768px) {
+          .scroller {
+            font-size: 40px;
+          }
+        }
+        @media (max-width: 480px) {
+          .scroller {
+            font-size: 28px;
+          }
+        }
       `}</style>
         </div>
     );

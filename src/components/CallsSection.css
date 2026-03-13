@@ -238,10 +238,28 @@
     }
 
     .calls-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+
+    .calls-subtitle {
+        font-size: 1rem;
+    }
+
+    .calls-grid {
+        grid-template-columns: 1fr;
     }
 
     .call-card {
         max-width: 100%;
     }
+
+    .call-name {
+        font-size: 1.1rem;
+    }
 }
+
+@media (max-width: 480px) {
+    .calls-title {
+        font-size: 1.75rem;
+    }
+}

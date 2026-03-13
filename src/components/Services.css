@@ -124,10 +124,21 @@
 
 @media (max-width: 768px) {
   .services-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   
   .services-section {
-    padding: 4rem 1.5rem;
+    padding: 4rem 1.25rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 480px) {
+  .services-title {
+    font-size: 1.75rem;
+  }
+}
+
