@@ -1,0 +1,16 @@
+{
+  "name": "Ring and Rise",
+  "short_name": "Ring & Rise",
+  "description": "Real Estate Cold Calling & Lead Generation",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
