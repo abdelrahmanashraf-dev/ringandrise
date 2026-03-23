@@ -3,6 +3,14 @@ import { motion } from 'framer-motion';
 import { ShieldCheck, Target, TrendingUp } from 'lucide-react';
 import './AboutUs.css';
 
+const fadeUp = {
+    hidden: { y: 24 },
+    visible: (delay = 0) => ({
+        y: 0,
+        transition: { duration: 0.5, delay, ease: 'easeOut' }
+    })
+};
+
 const AboutUs = () => {
     return (
         <section className="about-section" id="about">
@@ -11,19 +19,20 @@ const AboutUs = () => {
             <div className="about-container">
                 <div className="about-header">
                     <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
+                        variants={fadeUp}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.2 }}
                         className="about-title"
                     >
                         Your Trusted Partner in <span>Lead Generation Success</span>
                     </motion.h2>
                     <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
+                        variants={fadeUp}
+                        initial="hidden"
+                        whileInView="visible"
+                        custom={0.1}
+                        viewport={{ once: true, amount: 0.2 }}
                         className="about-subtitle"
                     >
                         We believe that serving everyone = serving no one powerfully. That's why we only focus on Real Estate.
@@ -33,10 +42,11 @@ const AboutUs = () => {
                 <div className="about-content">
                     <motion.div
                         className="about-text-content"
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
+                        variants={fadeUp}
+                        initial="hidden"
+                        whileInView="visible"
+                        custom={0.2}
+                        viewport={{ once: true, amount: 0.2 }}
                     >
                         <p className="about-paragraph primary">
                             Ring and Rise is a performance-driven lead generation firm based in the USA. We focus on cold calling, virtual assistance, and cold texting, all tailored to secure contracts within just 30 days.
@@ -53,10 +63,11 @@ const AboutUs = () => {
 
                     <motion.div
                         className="about-cards"
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
+                        variants={fadeUp}
+                        initial="hidden"
+                        whileInView="visible"
+                        custom={0.4}
+                        viewport={{ once: true, amount: 0.2 }}
                     >
                         <div className="about-card highlight">
                             <div className="about-card-icon">

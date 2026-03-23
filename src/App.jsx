@@ -16,22 +16,18 @@ import CallsSection from './components/CallsSection';
 function App() {
   return (
     <div className="App">
-      {/* <SmoothScrollHero> */}
       <Navbar />
       <Hero />
-      <div style={{ position: 'relative', zIndex: 10, background: 'transparent' }}>
-        <Services />
-        <WhyRingAndRise />
-        <CallsSection />
-        <LeadJourney />
-        <VideoSection />
-        <ScreensSection />
-        <Stats />
-        <AboutUs />
-        <FAQ />
-        <Footer />
-      </div>
-      {/* </SmoothScrollHero> */}
+      <Services />
+      <WhyRingAndRise />
+      <CallsSection />
+      <LeadJourney />
+      <VideoSection />
+      <ScreensSection />
+      <Stats />
+      <AboutUs />
+      <FAQ />
+      <Footer />
     </div>
   );
 }

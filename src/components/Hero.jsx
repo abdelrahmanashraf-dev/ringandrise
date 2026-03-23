@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { PopupModal } from "react-calendly";
 import { motion } from "framer-motion";
+import { PopupModal } from "react-calendly";
 import "./Hero.css";
 import Carousel from "./Carousel";
 
@@ -26,9 +26,14 @@ const AuroraHero = () => {
         <p className="aurora-desc">
           We guarantee 40 qualified leads per month for each caller, or we work for free until you get them.
         </p>
-        <button className="aurora-cta" onClick={() => setIsCalendlyOpen(true)}>
+        <motion.button
+          className="aurora-cta"
+          whileHover={{ y: -4, scale: 1.02 }}
+          transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+          onClick={() => setIsCalendlyOpen(true)}
+        >
           Start closing deals now <ArrowRight className="cta-icon" />
-        </button>
+        </motion.button>
       </div>
 
       {/* Text Parallax Strip */}

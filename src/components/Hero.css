@@ -4,7 +4,6 @@
     display: grid;
     min-height: 100vh;
     place-content: center;
-    overflow: hidden;
     background-color: var(--bg-primary, #030712);
     /* gray-950 */
     color: var(--text-primary, #e5e7eb);
@@ -45,7 +44,7 @@
     color: transparent;
     font-size: 1.875rem;
     /* text-3xl */
-    font-weight: 500;
+    font-weight: 700;
     line-height: 1.25;
     margin-bottom: 0;
 }
@@ -60,7 +59,18 @@
 @media (min-width: 768px) {
     .aurora-title {
         font-size: 4.5rem;
-        /* md:text-7xl */
+    }
+}
+
+@media (min-width: 1280px) {
+    .aurora-title {
+        font-size: 5.5rem;
+    }
+}
+
+@media (min-width: 1536px) {
+    .aurora-title {
+        font-size: 6.5rem;
     }
 }
 
@@ -68,18 +78,14 @@
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     max-width: 36rem;
-    /* max-w-xl */
-    font-size: 1rem;
-    /* text-base */
+    font-size: 1.25rem;
     line-height: 1.625;
     color: var(--text-muted);
-    /* gray-300 rough equivalent */
 }
 
 @media (min-width: 768px) {
     .aurora-desc {
-        font-size: 1.125rem;
-        /* md:text-lg */
+        font-size: 1.375rem;
     }
 }
 
@@ -97,9 +103,7 @@
 }
 
 .aurora-cta:hover {
-    transform: translateY(-4px) scale(1.02);
     box-shadow: 0 15px 40px -10px var(--accent-glow), 0 0 20px var(--alpha-10);
-    border-color: var(--accent-secondary);
 }
 
 .aurora-canvas-container {
@@ -107,4 +111,8 @@
     inset: 0;
     z-index: 0;
     opacity: 0.5;
+
+    pointer-events: none;
+    will-change: auto;
+    /* مهم */
 }

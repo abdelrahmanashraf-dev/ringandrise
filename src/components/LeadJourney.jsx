@@ -10,6 +10,14 @@ import {
 } from 'lucide-react';
 import './LeadJourney.css';
 
+const fadeUp = {
+    hidden: { y: 24 },
+    visible: (delay = 0) => ({
+        y: 0,
+        transition: { duration: 0.5, delay, ease: 'easeOut' }
+    })
+};
+
 const journeySteps = [
     {
         title: "Maximizing Efficiency with Advanced Technology",
@@ -52,19 +60,20 @@ const LeadJourney = () => {
             <div className="journey-container">
                 <div className="journey-header">
                     <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
+                        variants={fadeUp}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.2 }}
                         className="journey-title"
                     >
                         Your Lead Journey: <span>From First Ring to Closed Deal</span>
                     </motion.h2>
                     <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
+                        variants={fadeUp}
+                        initial="hidden"
+                        whileInView="visible"
+                        custom={0.1}
+                        viewport={{ once: true, amount: 0.2 }}
                         className="journey-subtitle"
                     >
                         Every qualified lead that reaches your CRM has been through our rigorous qualification process. Here's how we transform cold calls into motivated sellers ready for your team.
@@ -78,10 +87,11 @@ const LeadJourney = () => {
                         <motion.div
                             key={index}
                             className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'} ${step.isHighlight ? 'timeline-highlight' : ''}`}
-                            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true, margin: "-100px" }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
+                            variants={fadeUp}
+                            initial="hidden"
+                            whileInView="visible"
+                            custom={0.1}
+                            viewport={{ once: true, amount: 0.2 }}
                         >
                             <div className="timeline-content">
                                 <div className="timeline-icon-container">
@@ -89,7 +99,7 @@ const LeadJourney = () => {
                                 </div>
                                 <h3 className="timeline-content-title">{step.title}</h3>
                                 <div className="timeline-content-desc">
-                                    {step.description.split('\n').map((paragraph, i) => (
+                                    {step.description.split('\n').filter(p => p.trim() !== '').map((paragraph, i) => (
                                         <p key={i}>{paragraph}</p>
                                     ))}
                                 </div>

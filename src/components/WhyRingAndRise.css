@@ -39,7 +39,7 @@
 }
 
 .why-title span {
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  background-color: var(--text-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -76,18 +76,16 @@
 }
 
 .why-bad-card {
-  background: rgba(239, 68, 68, 0.03);
+  background: rgba(239, 68, 68, 0.05);
   border: 1px solid rgba(239, 68, 68, 0.1);
   border-left: 4px solid #ef4444;
   padding: 2.5rem 2rem;
   border-radius: 16px;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+  cursor: default;
 }
 
 .why-bad-card:hover {
-  background: rgba(239, 68, 68, 0.05);
-  transform: translateY(-5px);
+  background: rgba(239, 68, 68, 0.08);
   box-shadow: 0 10px 30px -10px rgba(239, 68, 68, 0.15);
 }
 
@@ -147,12 +145,11 @@
   border: 1px solid var(--alpha-8);
   border-radius: 20px;
   padding: 2.5rem 2rem;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
 }
 
 .why-good-card:hover {
-  transform: translateY(-5px);
   border-color: var(--accent-secondary);
   background: var(--blue-alpha-5);
   box-shadow: 0 10px 40px -10px rgba(59, 130, 246, 0.15);
@@ -250,4 +247,4 @@
   .why-subtitle {
     font-size: 1.2rem;
   }
-}
+}

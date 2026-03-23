@@ -1,0 +1,146 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--nav-border);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+}
+
+.logo-image {
+    height: 32px;
+    width: auto;
+}
+
+/* Desktop nav links */
+.nav-links {
+    display: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px;
+    transition: color 0.2s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-primary);
+    border-radius: 2px;
+    transition: width 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--text-primary);
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* CTA area */
+.nav-cta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Mobile hamburger */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mobile dropdown */
+.mobile-menu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--nav-border);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    z-index: 999;
+    gap: 0.25rem;
+}
+
+.mobile-menu a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.mobile-menu a:hover,
+.mobile-menu a.active {
+    color: var(--text-primary);
+    background: var(--alpha-5);
+}
+
+/* Desktop breakpoint */
+@media (min-width: 900px) {
+    .nav-links {
+        display: flex;
+    }
+
+    .mobile-menu-btn {
+        display: none !important;
+    }
+}
+
+@media (max-width: 899px) {
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .get-started-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+}

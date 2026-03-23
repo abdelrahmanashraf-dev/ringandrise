@@ -1,21 +1,23 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Play, Pause, User, Headset, Mic, Activity } from 'lucide-react';
+import { Play, Pause, Headset, Activity } from 'lucide-react';
 import './CallsSection.css';
 
-import adamAudio from '../calls/Adam.mp3';
-import emilyAudio from '../calls/Emily.mp3';
-import emmaAudio from '../calls/Emma.mp3';
-import johnAudio from '../calls/John.mp3';
-import mikeAudio from '../calls/Mike.mp3';
-
 const callsData = [
-    { id: 1, name: 'Adam', role: 'B2B Tech Sales', src: adamAudio },
-    { id: 2, name: 'Emily', role: 'Real Estate Outreach', src: emilyAudio },
-    { id: 3, name: 'Emma', role: 'SaaS Demo Setter', src: emmaAudio },
-    { id: 4, name: 'John', role: 'High-Ticket Closer', src: johnAudio },
-    { id: 5, name: 'Mike', role: 'Cold Outreach Specialist', src: mikeAudio },
+    { id: 1, name: 'Adam',  role: 'B2B Tech Sales',             src: new URL('../calls/Adam.mp3',  import.meta.url).href },
+    { id: 2, name: 'Emily', role: 'Real Estate Outreach',        src: new URL('../calls/Emily.mp3', import.meta.url).href },
+    { id: 3, name: 'Emma',  role: 'SaaS Demo Setter',            src: new URL('../calls/Emma.mp3',  import.meta.url).href },
+    { id: 4, name: 'John',  role: 'High-Ticket Closer',          src: new URL('../calls/John.mp3',  import.meta.url).href },
+    { id: 5, name: 'Mike',  role: 'Cold Outreach Specialist',    src: new URL('../calls/Mike.mp3',  import.meta.url).href },
 ];
+
+const fadeUp = {
+    hidden: { y: 24 },
+    visible: (delay = 0) => ({
+        y: 0,
+        transition: { duration: 0.5, delay, ease: 'easeOut' }
+    })
+};
 
 const Waveform = () => (
     <div className="call-waveform">
@@ -30,15 +32,12 @@ const CallsSection = () => {
 
     const togglePlay = (id) => {
         if (playingId === id) {
-            // Pause currently playing
             audioRefs.current[id].pause();
             setPlayingId(null);
         } else {
-            // Pause previously playing audio if any
             if (playingId && audioRefs.current[playingId]) {
                 audioRefs.current[playingId].pause();
             }
-            // Play new audio
             audioRefs.current[id].play();
             setPlayingId(id);
         }
@@ -53,18 +52,17 @@ const CallsSection = () => {
             <div className="calls-container">
                 <motion.div
                     className="calls-header"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
                 >
-                    <div className="section-badge px-4 py-2 rounded-full border border-theme bg-theme/10 text-theme inline-flex items-center gap-2 mb-4 mx-auto font-medium" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 16px', borderRadius: '9999px', border: '1px solid rgba(99, 102, 241, 0.4)', background: 'rgba(99, 102, 241, 0.1)', color: '#818cf8', fontWeight: '500', marginBottom: '16px' }}>
+                    <div className="section-badge">
                         <Activity size={16} /> <span>Live Voice Samples</span>
                     </div>
-                    <h2 className="calls-title">Listen to Our AI Callers</h2>
+                    <h2 className="calls-title">Listen to Our Callers</h2>
                     <p className="calls-subtitle">
-                        Experience the human-like quality, adaptive reasoning, and perfect tonality of our outbound sales agents.
-                        They handle objections flawlessly.
+                        Listen to real call recordings showcasing our callers handling objections flawlessly.
                     </p>
                 </motion.div>
 
@@ -73,17 +71,21 @@ const CallsSection = () => {
                         <motion.div
                             key={call.id}
                             className={`call-card ${playingId === call.id ? 'is-playing' : ''}`}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            variants={fadeUp}
+                            initial="hidden"
+                            whileInView="visible"
+                            custom={index * 0.1}
+                            whileHover={{ y: -8 }}
+                            animate={playingId === call.id ? { scale: 1.02 } : { scale: 1 }}
+                            viewport={{ once: true, amount: 0.2 }}
                             onClick={() => togglePlay(call.id)}
                         >
                             <audio
                                 ref={(el) => (audioRefs.current[call.id] = el)}
                                 src={call.src}
                                 onEnded={handleEnded}
-                                preload="metadata"
+                                preload="none"
+                                aria-label={`Voice sample from ${call.name}, ${call.role}`}
                             />
 
                             <div className="call-avatar">
@@ -95,16 +97,20 @@ const CallsSection = () => {
                                 <span className="call-role">{call.role}</span>
                             </div>
 
-                            <button
+                            <motion.button
                                 className="call-play-btn"
+                                whileHover={{ scale: 1.1 }}
                                 onClick={(e) => {
                                     e.stopPropagation();
                                     togglePlay(call.id);
                                 }}
-                                aria-label={playingId === call.id ? "Pause" : "Play"}
+                                aria-label={playingId === call.id ? 'Pause' : 'Play'}
                             >
-                                {playingId === call.id ? <Pause size={20} fill="currentColor" /> : <Play size={20} fill="currentColor" className="ml-1" />}
-                            </button>
+                                {playingId === call.id
+                                    ? <Pause size={20} fill="currentColor" />
+                                    : <Play size={20} fill="currentColor" className="ml-1" />
+                                }
+                            </motion.button>
 
                             {playingId === call.id && <Waveform />}
                         </motion.div>

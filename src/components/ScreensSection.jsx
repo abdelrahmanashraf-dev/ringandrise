@@ -11,6 +11,14 @@ import './ScreensSection.css';
 
 const images = [test1, test2, heroImg, test3, test4];
 
+const fadeUp = {
+    hidden: { y: 24 },
+    visible: (delay = 0) => ({
+        y: 0,
+        transition: { duration: 0.5, delay, ease: 'easeOut' }
+    })
+};
+
 const ScreensSection = () => {
     const [currentIndex, setCurrentIndex] = useState(2); // Start with heroImg focused
 
@@ -24,7 +32,6 @@ const ScreensSection = () => {
 
     const getVisibleItems = () => {
         const items = [];
-        // show 3 items across the screen (-1, 0, 1 from center)
         for (let i = -1; i <= 1; i++) {
             let index = (currentIndex + i + images.length) % images.length;
             items.push({ img: images[index], index, position: i });
@@ -37,13 +44,13 @@ const ScreensSection = () => {
             <div className="screens-glow"></div>
             <div className="screens-container-inner">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
                     className="screens-header"
                 >
-                    <h2 className="screens-title">Trusted by<span>Real Estate Investors</span></h2>
+                    <h2 className="screens-title">Trusted by <span>Real Estate Investors</span></h2>
                     <p className="screens-desc">Real results from real teams using our proven platform.</p>
                 </motion.div>
 
@@ -53,7 +60,7 @@ const ScreensSection = () => {
                     </button>
 
                     <div className="carousel-track">
-                        <AnimatePresence mode="popLayout">
+                        <AnimatePresence initial={false} mode="popLayout">
                             {getVisibleItems().map((item) => {
                                 const isActive = item.position === 0;
 
@@ -61,13 +68,13 @@ const ScreensSection = () => {
                                     <motion.div
                                         key={item.img}
                                         layout
-                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        initial={{ scale: 0.8 }}
                                         animate={{
-                                            opacity: isActive ? 1 : 0.5,
                                             scale: isActive ? 1.05 : 0.85,
-                                            zIndex: isActive ? 10 : 5
+                                            zIndex: isActive ? 10 : 5,
+                                            opacity: isActive ? 1 : 0.5,
                                         }}
-                                        exit={{ opacity: 0, scale: 0.8 }}
+                                        exit={{ scale: 0.8 }}
                                         transition={{ duration: 0.4 }}
                                         className={`screen-card ${isActive ? 'hero-focus' : ''}`}
                                         onClick={() => setCurrentIndex(item.index)}

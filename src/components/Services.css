@@ -14,7 +14,7 @@
   left: -10%;
   width: 40%;
   height: 40%;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, rgba(0,0,0,0) 70%);
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
   z-index: 0;
   pointer-events: none;
 }
@@ -26,7 +26,7 @@
   right: -10%;
   width: 50%;
   height: 50%;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.05) 0%, rgba(0,0,0,0) 70%);
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.05) 0%, rgba(0, 0, 0, 0) 70%);
   z-index: 0;
   pointer-events: none;
 }
@@ -66,7 +66,7 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 2rem;
 }
 
@@ -75,16 +75,15 @@
   border: 1px solid var(--alpha-8);
   border-radius: 20px;
   padding: 2.5rem 2rem;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
   border-color: var(--accent-secondary);
   background: var(--blue-alpha-5);
   box-shadow: 0 10px 40px -10px rgba(59, 130, 246, 0.15);
@@ -126,8 +125,11 @@
   .services-title {
     font-size: 2rem;
   }
-  
+
   .services-section {
+    content-visibility: auto;
+    contain-intrinsic-size: 1000px;
+    isolation: isolate;
     padding: 4rem 1.25rem;
   }
 
@@ -141,4 +143,3 @@
     font-size: 1.75rem;
   }
 }
-

@@ -2,6 +2,14 @@ import React, { useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import './Stats.css';
 
+const fadeUp = {
+    hidden: { y: 24 },
+    visible: (delay = 0) => ({
+        y: 0,
+        transition: { duration: 0.5, delay, ease: 'easeOut' }
+    })
+};
+
 const AnimatedNumber = ({ value, suffix = "", prefix = "" }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -10,7 +18,8 @@ const AnimatedNumber = ({ value, suffix = "", prefix = "" }) => {
     useEffect(() => {
         if (isInView) {
             let startTimestamp = null;
-            const duration = 2000; // 2 seconds
+            let rafId = null;
+            const duration = 2000;
 
             const step = (timestamp) => {
                 if (!startTimestamp) startTimestamp = timestamp;
@@ -21,11 +30,15 @@ const AnimatedNumber = ({ value, suffix = "", prefix = "" }) => {
                 setDisplayValue(Math.floor(ease * value));
 
                 if (progress < 1) {
-                    window.requestAnimationFrame(step);
+                    rafId = window.requestAnimationFrame(step);
                 }
             };
 
-            window.requestAnimationFrame(step);
+            rafId = window.requestAnimationFrame(step);
+
+            return () => {
+                if (rafId) window.cancelAnimationFrame(rafId);
+            };
         }
     }, [isInView, value]);
 
@@ -42,53 +55,36 @@ const Stats = () => {
             <div className="stats-container">
                 <motion.div
                     className="stats-header"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
                 >
                     <h2 className="stats-title">Proven Results</h2>
                 </motion.div>
 
                 <div className="stats-grid">
-                    <motion.div
-                        className="stat-card"
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
-                    >
-                        <h3 className="stat-value">
-                            <AnimatedNumber value={50} suffix="+" />
-                        </h3>
-                        <p className="stat-label">Happy Clients</p>
-                    </motion.div>
-
-                    <motion.div
-                        className="stat-card"
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                    >
-                        <h3 className="stat-value">
-                            <AnimatedNumber value={100} suffix="%" />
-                        </h3>
-                        <p className="stat-label">Data Driven Approach</p>
-                    </motion.div>
-
-                    <motion.div
-                        className="stat-card"
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.3 }}
-                    >
-                        <h3 className="stat-value">
-                            <AnimatedNumber value={200} prefix="+" />
-                        </h3>
-                        <p className="stat-label">Closed Deals From Our Calls</p>
-                    </motion.div>
+                    {[
+                        { value: 50, suffix: '+', label: 'Happy Clients', delay: 0.1 },
+                        { value: 100, suffix: '%', label: 'Data Driven Approach', delay: 0.2 },
+                        { value: 200, prefix: '+', label: 'Closed Deals From Our Calls', delay: 0.3 },
+                    ].map(({ value, suffix, prefix, label, delay }) => (
+                        <motion.div
+                            key={label}
+                            className="stat-card"
+                            variants={fadeUp}
+                            initial="hidden"
+                            whileInView="visible"
+                            custom={delay}
+                            whileHover={{ y: -10 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                        >
+                            <h3 className="stat-value">
+                                <AnimatedNumber value={value} suffix={suffix} prefix={prefix} />
+                            </h3>
+                            <p className="stat-label">{label}</p>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </section>

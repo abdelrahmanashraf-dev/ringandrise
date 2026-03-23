@@ -3,6 +3,14 @@ import { Building2, Search, CalendarCheck, Database, PhoneCall, Home } from 'luc
 import { motion } from 'framer-motion';
 import './Services.css';
 
+const fadeUp = {
+    hidden: { y: 24 },
+    visible: (delay = 0) => ({
+        y: 0,
+        transition: { duration: 0.5, delay, ease: 'easeOut' }
+    })
+};
+
 const services = [
     {
         title: "Real Estate",
@@ -42,19 +50,20 @@ const Services = () => {
             <div className="services-container">
                 <div className="services-header">
                     <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
+                        variants={fadeUp}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.2 }}
                         className="services-title"
                     >
                         Real Estate <span>Services</span>
                     </motion.h2>
                     <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
+                        variants={fadeUp}
+                        initial="hidden"
+                        whileInView="visible"
+                        custom={0.1}
+                        viewport={{ once: true, amount: 0.2 }}
                         className="services-subtitle"
                     >
                         Comprehensive solutions designed to supercharge your deal flow and scale your real estate business.
@@ -66,10 +75,12 @@ const Services = () => {
                         <motion.div
                             key={index}
                             className="service-card"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            variants={fadeUp}
+                            initial="hidden"
+                            whileInView="visible"
+                            custom={index * 0.1}
+                            whileHover={{ y: -5 }}
+                            viewport={{ once: true, amount: 0.2 }}
                         >
                             <div className="service-icon-wrapper">
                                 {service.icon}

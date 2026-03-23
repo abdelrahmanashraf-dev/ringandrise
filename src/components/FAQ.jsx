@@ -36,6 +36,14 @@ const faqs = [
     }
 ];
 
+const fadeUp = {
+    hidden: { y: 24 },
+    visible: (delay = 0) => ({
+        y: 0,
+        transition: { duration: 0.5, delay, ease: 'easeOut' }
+    })
+};
+
 const FAQ = () => {
     const [openIndex, setOpenIndex] = useState(null);
 
@@ -48,19 +56,20 @@ const FAQ = () => {
             <div className="faq-container">
                 <div className="faq-header">
                     <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
+                        variants={fadeUp}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.2 }}
                         className="faq-title"
                     >
                         Frequently Asked <span>Questions</span>
                     </motion.h2>
                     <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
+                        variants={fadeUp}
+                        initial="hidden"
+                        whileInView="visible"
+                        custom={0.1}
+                        viewport={{ once: true, amount: 0.2 }}
                         className="faq-subtitle"
                     >
                         Everything you need to know about our real estate cold calling services.
@@ -72,29 +81,35 @@ const FAQ = () => {
                         <motion.div
                             key={index}
                             className={`faq-item ${openIndex === index ? 'open' : ''}`}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: index * 0.1 }}
+                            variants={fadeUp}
+                            initial="hidden"
+                            whileInView="visible"
+                            custom={index * 0.08}
+                            viewport={{ once: true, amount: 0.2 }}
                         >
                             <button
                                 className="faq-question"
                                 onClick={() => toggleFaq(index)}
                                 aria-expanded={openIndex === index}
+                                aria-controls={`faq-answer-${index}`}
                             >
                                 <span>{faq.question}</span>
                                 <ChevronDown
                                     className={`faq-icon ${openIndex === index ? 'rotate' : ''}`}
                                     size={20}
+                                    aria-hidden="true"
                                 />
                             </button>
-                            <AnimatePresence>
+                            <AnimatePresence initial={false}>
                                 {openIndex === index && (
                                     <motion.div
-                                        initial={{ height: 0, opacity: 0 }}
-                                        animate={{ height: "auto", opacity: 1 }}
-                                        exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
+                                        id={`faq-answer-${index}`}
+                                        role="region"
+                                        aria-label={faq.question}
+                                        initial={{ height: 0 }}
+                                        animate={{ height: 'auto' }}
+                                        exit={{ height: 0 }}
+                                        transition={{ duration: 0.3, ease: 'easeInOut' }}
                                         className="faq-answer-wrapper"
                                     >
                                         <div className="faq-answer">

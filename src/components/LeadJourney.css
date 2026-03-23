@@ -101,12 +101,11 @@
     border-radius: 24px;
     padding: 3rem;
     position: relative;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+    transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
 }
 
 .timeline-item:hover .timeline-content {
-    transform: translateY(-5px);
     border-color: rgba(59, 130, 246, 0.3);
     background: var(--alpha-4);
     box-shadow: 0 20px 40px -20px rgba(59, 130, 246, 0.15);
