@@ -98,8 +98,8 @@
     left: 0;
     width: 100%;
     background: var(--nav-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--nav-border);
     display: flex;
     flex-direction: column;
