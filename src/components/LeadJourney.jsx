@@ -1,22 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import {
-    Headset,
-    UserCheck,
-    Target,
-    ShieldCheck,
-    Link,
-    Trophy
-} from 'lucide-react';
+import { Headset, UserCheck, Target, ShieldCheck, Link, Trophy } from 'lucide-react';
 import './LeadJourney.css';
-
-const fadeUp = {
-    hidden: { y: 24 },
-    visible: (delay = 0) => ({
-        y: 0,
-        transition: { duration: 0.5, delay, ease: 'easeOut' }
-    })
-};
 
 const journeySteps = [
     {
@@ -56,24 +41,22 @@ const LeadJourney = () => {
     return (
         <section id="workflow" className="journey-section">
             <div className="journey-bg-glow"></div>
-
             <div className="journey-container">
                 <div className="journey-header">
                     <motion.h2
-                        variants={fadeUp}
-                        initial="hidden"
-                        whileInView="visible"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.2 }}
+                        transition={{ duration: 0.5 }}
                         className="journey-title"
                     >
                         Your Lead Journey: <span>From First Ring to Closed Deal</span>
                     </motion.h2>
                     <motion.p
-                        variants={fadeUp}
-                        initial="hidden"
-                        whileInView="visible"
-                        custom={0.1}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.2 }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
                         className="journey-subtitle"
                     >
                         Every qualified lead that reaches your CRM has been through our rigorous qualification process. Here's how we transform cold calls into motivated sellers ready for your team.
@@ -82,16 +65,14 @@ const LeadJourney = () => {
 
                 <div className="journey-timeline">
                     <div className="timeline-line"></div>
-
                     {journeySteps.map((step, index) => (
                         <motion.div
                             key={index}
                             className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'} ${step.isHighlight ? 'timeline-highlight' : ''}`}
-                            variants={fadeUp}
-                            initial="hidden"
-                            whileInView="visible"
-                            custom={0.1}
+                            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}  // ← left slides from left, right from right
+                            whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, amount: 0.2 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
                         >
                             <div className="timeline-content">
                                 <div className="timeline-icon-container">
