@@ -24,7 +24,6 @@ const AuroraHero = () => {
           The only cold calling company with a guaranteed results.
         </h1>
         <p className="aurora-desc">
-          We guarantee 40 qualified leads per month for each caller, or we work for free until you get them.
         </p>
         <motion.button
           className="aurora-cta"
@@ -38,7 +37,7 @@ const AuroraHero = () => {
 
       {/* Text Parallax Strip */}
       <div style={{ position: 'absolute', bottom: '10%', width: '100%', overflow: 'hidden', zIndex: 5 }}>
-        <Carousel baseVelocity={-2}>RingRise • 10x Calls • AI Power •</Carousel>
+        <Carousel baseVelocity={-2}>RingRise • 10x Calls • Motivated Sellers •</Carousel>
         <Carousel baseVelocity={2}>More Leads • Better Conversations •</Carousel>
       </div>
 

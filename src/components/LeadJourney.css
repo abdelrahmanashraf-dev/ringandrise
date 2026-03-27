@@ -26,6 +26,15 @@
     z-index: 2;
 }
 
+@media (min-width: 1400px) {
+    .journey-container {
+        max-width: 1280px;
+    }
+    .journey-section {
+        padding: 9rem 2rem;
+    }
+}
+
 .journey-header {
     text-align: center;
     margin-bottom: 6rem;

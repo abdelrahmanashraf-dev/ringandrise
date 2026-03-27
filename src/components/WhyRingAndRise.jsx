@@ -16,7 +16,7 @@ const goodCards = [
         icon: <CheckCircle2 size={24} color="white" />,
         title: 'Native-Level Communication',
         delay: 0.1,
-        text: "While many agencies use callers with heavy accents that hurt credibility and conversion rates, we exclusively employ callers with native-like accents who sound natural, professional, and trustworthy. First impressions matter—especially in cold calling services."
+        text: "While many agencies use callers with heavy accents that hurt credibility and conversion rates, we exclusively employ callers with native-like accents who sound natural, professional, and trustworthy. First impressions matter, especially in cold calling services."
     },
     {
         icon: <FileText size={24} color="white" />,
@@ -28,7 +28,7 @@ const goodCards = [
         icon: <Eye size={24} color="white" />,
         title: 'Complete Transparency',
         delay: 0.3,
-        text: "You'll receive weekly performance audits that show exactly what we're doing, when we're working, and the results we're generating. Every call, every conversation, every qualified lead—fully documented and accessible to you."
+        text: "You'll receive weekly performance audits that show exactly what we're doing, when we're working, and the results we're generating. Every call, every conversation, every qualified lead, fully documented and accessible to you."
     },
     {
         icon: <ShieldCheck size={24} color="white" />,

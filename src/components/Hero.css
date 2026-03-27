@@ -19,6 +19,9 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    max-width: 900px;
+    width: 100%;
+    padding-bottom: 8rem;
 }
 
 .aurora-badge {
@@ -35,15 +38,12 @@
 }
 
 .aurora-title {
-    max-width: 48rem;
-    /* max-w-3xl */
+    max-width: 52rem;
     background-image: linear-gradient(to bottom right, #ffffff, #9ca3af);
-    /* from-white to-gray-400 */
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     font-size: 1.875rem;
-    /* text-3xl */
     font-weight: 700;
     line-height: 1.25;
     margin-bottom: 0;
@@ -52,25 +52,24 @@
 @media (min-width: 640px) {
     .aurora-title {
         font-size: 3rem;
-        /* sm:text-5xl */
     }
 }
 
 @media (min-width: 768px) {
     .aurora-title {
-        font-size: 4.5rem;
+        font-size: 4rem;
     }
 }
 
 @media (min-width: 1280px) {
     .aurora-title {
-        font-size: 5.5rem;
+        font-size: 4.5rem;
     }
 }
 
 @media (min-width: 1536px) {
     .aurora-title {
-        font-size: 6.5rem;
+        font-size: 5rem;
     }
 }
 

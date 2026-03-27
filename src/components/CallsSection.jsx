@@ -4,11 +4,11 @@ import { Play, Pause, Headset, Activity } from 'lucide-react';
 import './CallsSection.css';
 
 const callsData = [
-    { id: 1, name: 'Adam',  role: 'B2B Tech Sales',             src: new URL('../calls/Adam.mp3',  import.meta.url).href },
-    { id: 2, name: 'Emily', role: 'Real Estate Outreach',        src: new URL('../calls/Emily.mp3', import.meta.url).href },
-    { id: 3, name: 'Emma',  role: 'SaaS Demo Setter',            src: new URL('../calls/Emma.mp3',  import.meta.url).href },
-    { id: 4, name: 'John',  role: 'High-Ticket Closer',          src: new URL('../calls/John.mp3',  import.meta.url).href },
-    { id: 5, name: 'Mike',  role: 'Cold Outreach Specialist',    src: new URL('../calls/Mike.mp3',  import.meta.url).href },
+    { id: 1, name: 'Adam', role: 'Cold Caller', src: new URL('../calls/Adam.mp3', import.meta.url).href },
+    { id: 2, name: 'Emily', role: 'Cold Caller', src: new URL('../calls/Emily.mp3', import.meta.url).href },
+    { id: 3, name: 'Emma', role: 'Cold Caller', src: new URL('../calls/Emma.mp3', import.meta.url).href },
+    { id: 4, name: 'John', role: 'Cold Caller', src: new URL('../calls/John.mp3', import.meta.url).href },
+    { id: 5, name: 'Mike', role: 'Cold Caller', src: new URL('../calls/Mike.mp3', import.meta.url).href },
 ];
 
 const fadeUp = {

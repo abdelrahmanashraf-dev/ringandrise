@@ -7,13 +7,13 @@ import './Navbar.css';
 
 const NAV_LINKS = [
     { href: '#services', label: 'Services' },
-    { href: '#why-us',   label: 'Why Us'  },
-    { href: '#samples',  label: 'Samples' },
+    { href: '#why-us', label: 'Why Us' },
+    { href: '#samples', label: 'Samples' },
     { href: '#workflow', label: 'Workflow' },
-    { href: '#screens',  label: 'Clients' },
-    { href: '#stats',    label: 'Results' },
-    { href: '#about',    label: 'About'   },
-    { href: '#faq',      label: 'FAQ'     },
+    { href: '#screens', label: 'Clients' },
+    { href: '#stats', label: 'Results' },
+    { href: '#about', label: 'About' },
+    { href: '#faq', label: 'FAQ' },
 ];
 
 const Navbar = () => {
@@ -61,7 +61,7 @@ const Navbar = () => {
                         className="btn btn-primary get-started-btn"
                         onClick={() => setIsCalendlyOpen(true)}
                     >
-                        Get Started
+                        Book a Call
                     </button>
                     <button
                         className="mobile-menu-btn"
