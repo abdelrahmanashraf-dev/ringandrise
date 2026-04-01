@@ -66,7 +66,7 @@ const Services = () => {
                         viewport={{ once: true, amount: 0.2 }}
                         className="services-subtitle"
                     >
-                        Comprehensive solutions designed to supercharge your deal flow and scale your real estate business.
+                        All what you need in one place.
                     </motion.p>
                 </div>
 

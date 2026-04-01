@@ -19,9 +19,9 @@ const AuroraHero = () => {
       </div>
 
       <div className="aurora-content">
-        {/* <span className="aurora-badge">New: AI Voice Analysis 2.0</span> */}
+        {<span className="aurora-badge">Ring & Rise</span>}
         <h1 className="aurora-title">
-          The only cold calling company with a guaranteed results.
+          The only Lead Gen Company With Guaranteed Results
         </h1>
         <p className="aurora-desc">
         </p>
